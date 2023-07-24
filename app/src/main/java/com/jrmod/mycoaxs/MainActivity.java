@@ -18,7 +18,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
 
-    Button button1;
+    Button button1, reset;
     EditText input1, input2, input3, input4;
     TextView hasil1, x, y, z, c, justment;
 
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         input4 = findViewById(R.id.input4);
 
         button1 = findViewById(R.id.button1);
+        reset = findViewById(R.id.reset);
         hasil1 = findViewById(R.id.hasil1);
         justment = findViewById(R.id.justy);
         x = findViewById(R.id.hsil1);
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         c = findViewById(R.id.hsilB);
 
         button1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 try {
@@ -91,6 +91,23 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
+        });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                input1.getText().clear();
+                input2.getText().clear();
+                input3.getText().clear();
+                input4.getText().clear();
+                hasil1.setText(R.string.hasil1);
+                x.setText(null);
+                y.setText(null);
+                z.setText(null);
+                c.setText(null);
+                justment.setText("");
+            }
         });
     }
 }

@@ -78,18 +78,18 @@
                 android:text="@string/hasil" />
 
             <TextView
-                android:textColor="@color/black"
                 android:id="@+id/hasil1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_marginStart="15dp"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
                 android:background="@drawable/hasil_background"
                 android:gravity="center"
                 android:text="@string/hasil1"
-                android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -141,6 +141,12 @@
             android:gravity="center"
             android:textAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
             android:textSize="52sp" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reset" />
 
     </LinearLayout>
 

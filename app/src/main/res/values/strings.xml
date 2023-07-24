@@ -3,4 +3,5 @@
     <string name="input1">0.0012</string>
     <string name="hasil">Hasil</string>
     <string name="hasil1">hasil akan disini</string>
+    <string name="reset">Reset</string>
 </resources>
