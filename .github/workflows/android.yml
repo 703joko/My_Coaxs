@@ -24,44 +24,21 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+      
+   - name: Build this shit
+    run: make build
+  - name: version
+    run: echo "::set-output name=version::$(./bin/azblogfilter --version)"
+    id: version
+  - name: release
+    uses: actions/create-release@v1
+    id: create_release
+    with:
+      draft: false
+      prerelease: false
+      release_name: ${{ steps.version.outputs.version }}
+      tag_name: ${{ github.ref }}
+      body_path: CHANGELOG.md
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
 
-
-       
-
-  archive-build-artifacts:
-
-    runs-on: ubuntu-latest
-
-    steps:
-
-      - name: Step 1 - Create a temporary artifact downloads folder
-
-        run: mkdir downloads
-
-        
-
-      - name: step 2 - Add artifacts to publish to the temp folder
-
-        run: |
-
-          cd downloads
-
-          echo 'alpha'    > alpha.html
-
-          echo 'bravo'    > bravo.html
-
-          echo 'charlie'  > charlie.html
-
-          cd ..
-
-    
-
-      - name: Step 3 - Use the Upload Artifact GitHub Action
-
-        uses: actions/upload-artifact@v2
-
-        with: 
-
-          name: assets-for-download
-
-          path: downloads
