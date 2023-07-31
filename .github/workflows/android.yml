@@ -1,7 +1,5 @@
-name: Android CI
 
-      
-   - name: Build this shit
+   name: Build this shit
     run: make build
   - name: version
     run: echo "::set-output name=version::$(./bin/azblogfilter --version)"
