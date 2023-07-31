@@ -1,10 +1,5 @@
 name: Android CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
       
    - name: Build this shit
     run: make build
