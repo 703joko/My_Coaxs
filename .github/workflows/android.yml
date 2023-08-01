@@ -24,7 +24,7 @@ jobs:
       - name: Build APK
         run: ./gradlew :app:assembleRelease
       - name: Releasing using Hub
-        uses: 703joko/My_Coaxs@main
+        uses: 703joko/My_Coaxs@master
         env:
          GITHUB_TOKEN: ${{ secrets.TOKEN }}
          APP_FOLDER: app
