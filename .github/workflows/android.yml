@@ -26,5 +26,5 @@ jobs:
       - name: Releasing using Hub
         uses: 703joko/My_Coaxs@master
         env:
-         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.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 }}
          APP_FOLDER: app
