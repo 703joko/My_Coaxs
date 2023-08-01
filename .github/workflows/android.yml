@@ -27,7 +27,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: addressbook
+          name: mycoaxs
           path: app/build/outputs/apk/release/MyCoaxs${{ github.event.inputs.version }}.apk
   release:
     name: Release APK
@@ -36,6 +36,8 @@ jobs:
     steps:
       - name: Download APK from build
         uses: actions/download-artifact@v1
+        with:
+          name: mycoaxs
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
