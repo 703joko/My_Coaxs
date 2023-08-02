@@ -39,16 +39,18 @@ jobs:
      - name: Create Release
        id: create_release
        uses: actions/create-release@v1
-       with:
+       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
          tag_name: ${{ github.run_number }}
          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}
      - name: Upload Release APK
        id: upload_release_asset
        uses: actions/upload-release-asset@v1.0.1
                 
-       with:
+       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
          upload_url: ${{ steps.create_release.outputs.upload_url }}
          asset_path: apk/app-debug.apk
          asset_name: ${{ github.event.repository.name }}.apk
