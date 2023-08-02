@@ -21,22 +21,12 @@ jobs:
        run: chmod +x gradlew
      - name: Build APK
        run: bash ./gradlew assembleRelease --stacktrace
-     
-
-     - name: Releasing using Hub
-
-       uses: kyze8439690/action-release-releaseapk@master
- 
-       env:
-
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
-        APP_FOLDER: app
+       
      - name: Upload APK
        uses: actions/upload-artifact@v1
        with:
          name: apk
-         path: app/release/app-release.apk
+         path: app/app-release.apk
 
  release:
    name: Release APK 
@@ -51,7 +41,7 @@ jobs:
        id: create_release
        uses: actions/create-release@v1
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOK    EN }}
        with:
          tag_name: ${{ github.run_number }}
          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}
