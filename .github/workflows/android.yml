@@ -13,7 +13,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v3
      - name: Setup JDK
-       uses: actions/setup-java@v2.5.0
+       uses: actions/setup-java@v3
        with:
          distribution: temurin
          java-version: "17"
@@ -40,7 +40,7 @@ jobs:
        id: create_release
        uses: actions/create-release@v1
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_TOKEN: ${{ secrets.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 }}
        with:
          tag_name: ${{ github.run_number }}
          release_name: ${{ github.event.repository.name }} v${{ github.run_number }}
