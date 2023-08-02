@@ -23,7 +23,7 @@ jobs:
       uses: VladDaniliuk/action-release-releaseapk@master
       env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       VERSION_VARIABLE: versionName
+
        APP_FOLDER: ./app/release/app.apk
        RELEASE_TITLE: New Build
        NAME_VARIABLE: app-release.apk
