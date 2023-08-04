@@ -72,7 +72,10 @@ public class MainActivity extends AppCompatActivity {
                         justment.setBackgroundColor(Color.RED);
                         hasil1.setTextColor(Color.RED);
                     } else if (final1 >= 0.014) {
-                        justment.setText("Out CheckSheet");
+                        double drawing, outPersentase;
+                        drawing = 0.020;
+                        outPersentase = final1 / drawing;
+                        justment.setText("out" + outPersentase + "%");
                         justment.setBackgroundColor(Color.BLUE);
                         hasil1.setTextColor(Color.BLUE);
                     } else {
