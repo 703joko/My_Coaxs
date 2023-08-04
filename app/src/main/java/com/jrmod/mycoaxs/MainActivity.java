@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         justment.setBackgroundColor(Color.RED);
                         hasil1.setTextColor(Color.RED);
                     } else if (final1 >= 0.014) {
-                        double drawing, outPersentase;
+                        double drawing, outPersentase, outPersentase2;
                         drawing = 0.020;
                         outPersentase = final1 / drawing;
                         outPersentase2 = outPersentase * 10;
