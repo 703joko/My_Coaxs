@@ -75,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
                         double drawing, outPersentase;
                         drawing = 0.020;
                         outPersentase = final1 / drawing;
-                        justment.setText("out" + outPersentase + "%");
+                        DecimalFormat formatOut = new DecimalFormat("##");
+                        String akhirOutPersentase = formatOut.format(outPersentase);
+                        justment.setText("out " + outPersentase + "%");
                         justment.setBackgroundColor(Color.BLUE);
                         hasil1.setTextColor(Color.BLUE);
                     } else {
